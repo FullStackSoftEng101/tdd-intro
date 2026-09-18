@@ -12,16 +12,17 @@
  * sumDouble(5, 5); // 20
  */
 export function sumDouble(num1, num2) {
-  /* TODO */ let sum = num1 + num2;
+  /* TODO */
+  const sum = num1 + num2;
   if (num1 === num2) {
-    return (sum += sum);
+    return sum * 2;
   } else {
     return sum;
   }
 }
 console.log(sumDouble(1, 2));
 console.log(sumDouble(2, 2));
-console.log(sumDouble(3, 3));
+console.log(sumDouble(-4, -6));
 
 /**
  * @param {number} num1 - First number.
@@ -37,7 +38,10 @@ console.log(sumDouble(3, 3));
  */
 export function makes10(num1, num2) {
   /* TODO */
+  return num1 === 10 || num2 === 10 || num1 + num2 === 10;
 }
+console.log(makes10(10, 0));
+console.log(makes10(0, 10));
 
 /**
  * Hint: Math.abs(num) returns the absolute value of num.

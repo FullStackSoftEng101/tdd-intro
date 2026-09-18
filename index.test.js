@@ -13,7 +13,7 @@ import {
   shouldAnswerPhone,
 } from "./index.js";
 
-describe.only("sumDouble", function () {
+describe("sumDouble", function () {
   it("adds two different positive numbers", function () {
     expect(sumDouble(1, 2)).toBe(3);
   });
@@ -39,7 +39,7 @@ describe.only("sumDouble", function () {
   });
 });
 
-describe("makes10", function () {
+describe.only("makes10", function () {
   it("is true when first number is 10", function () {
     expect(makes10(10, 0)).toBe(true);
   });
