@@ -92,7 +92,7 @@ describe.only("near100", function () {
   });
 });
 
-describe("isMultiple35", function () {
+describe.only("isMultiple35", function () {
   it("is true for a multiple of 3 only", function () {
     expect(isMultiple35(3)).toBe(true);
     expect(isMultiple35(9)).toBe(true);

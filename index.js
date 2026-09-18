@@ -82,7 +82,10 @@ console.log(near100(111, 10));
  */
 export function isMultiple35(n) {
   /* TODO */
+  return n % 3 === 0 || n % 5 === 0;
 }
+console.log(isMultiple35(3));
+console.log(isMultiple35(9));
 
 /**
  * Hint: use the remainder operator (%)
