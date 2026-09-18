@@ -13,7 +13,7 @@ import {
   shouldAnswerPhone,
 } from "./index.js";
 
-describe("sumDouble", function () {
+describe.only("sumDouble", function () {
   it("adds two different positive numbers", function () {
     expect(sumDouble(1, 2)).toBe(3);
   });

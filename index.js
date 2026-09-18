@@ -12,8 +12,16 @@
  * sumDouble(5, 5); // 20
  */
 export function sumDouble(num1, num2) {
-  /* TODO */
+  /* TODO */ let sum = num1 + num2;
+  if (num1 === num2) {
+    return (sum += sum);
+  } else {
+    return sum;
+  }
 }
+console.log(sumDouble(1, 2));
+console.log(sumDouble(2, 2));
+console.log(sumDouble(3, 3));
 
 /**
  * @param {number} num1 - First number.
