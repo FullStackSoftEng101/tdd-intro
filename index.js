@@ -103,6 +103,7 @@ console.log(isMultiple35(9));
  */
 export function shareLastDigit(num1, num2) {
   /* TODO */
+  return num1 % 10 === num2 % 10;
 }
 
 /**
