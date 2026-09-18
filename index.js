@@ -60,12 +60,18 @@ console.log(makes10(0, 10));
 export function near100(n, distance) {
   /* TODO */
   // return n >= 95 && n <= 110;
-  console.log(100 - n);
+  //console.log(100 - n);
+  //return Math.abs(100 - n) <= distance;
+  if (n <= 100) {
+    return 100 - n <= distance;
+  }
   return Math.abs(100 - n) <= distance;
 }
 
 console.log(near100(95, 10));
 console.log(near100(111, 10));
+
+//or
 
 /**
  * Hint: use the remainder operator (%)
@@ -215,4 +221,17 @@ export function canEnterClub(you, date) {
  */
 export function shouldAnswerPhone(isMorning, isBoss, isAsleep) {
   /* TODO */
+  /*- In the morning, you only answer if it is your boss calling.
+ /* - If you are asleep, you do not answer at all.
+*/
+  if (isAsleep) {
+    return false;
+  } else if (isMorning) {
+    if (isBoss) {
+      return true;
+    }
+    return false;
+  } else {
+    return true;
+  }
 }
