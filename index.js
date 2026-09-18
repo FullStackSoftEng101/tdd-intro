@@ -59,7 +59,13 @@ console.log(makes10(0, 10));
  */
 export function near100(n, distance) {
   /* TODO */
+  // return n >= 95 && n <= 110;
+  console.log(100 - n);
+  return Math.abs(100 - n) <= distance;
 }
+
+console.log(near100(95, 10));
+console.log(near100(111, 10));
 
 /**
  * Hint: use the remainder operator (%)
