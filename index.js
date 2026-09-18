@@ -121,6 +121,7 @@ export function shareLastDigit(num1, num2) {
  */
 export function isColdAndHot(temp1, temp2) {
   /* TODO */
+  return (temp1 > 100 && temp2 < 0) || (temp1 < 0 && temp2 > 100);
 }
 
 /**
@@ -137,7 +138,10 @@ export function isColdAndHot(temp1, temp2) {
  */
 export function makeABBA(A, B) {
   /* TODO */
+  return A + B + B + A;
 }
+console.log(makeABBA("Hi", "Bye"));
+console.log(makeABBA("Yo", "Alice"));
 
 /**
  * Returns a string of the form short+long+short, with the shorter string
@@ -158,6 +162,11 @@ export function makeABBA(A, B) {
  */
 export function makeSLS(str1, str2) {
   /* TODO */
+  if (str1.length < str2.length) {
+    return str1 + str2 + str1;
+  } else {
+    return str2 + str1 + str2;
+  }
 }
 
 /**
@@ -179,8 +188,14 @@ export function makeSLS(str1, str2) {
  */
 export function canEnterClub(you, date) {
   /* TODO */
+  if (you <= 2 || date <= 2) {
+    return 0;
+  } else if (you >= 8 || date >= 8) {
+    return 2;
+  } else {
+    return 1;
+  }
 }
-
 /**
  * Your phone rings. Normally you answer, except:
  * - In the morning, you only answer if it is your boss calling.
