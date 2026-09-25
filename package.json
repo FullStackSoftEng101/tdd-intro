@@ -1,6 +1,6 @@
 {
   "name": "tdd-intro",
-  "main": "index.js",
+  "main": "index2.js",
   "scripts": {
     "test": "vitest"
   },

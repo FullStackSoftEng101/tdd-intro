@@ -13,81 +13,96 @@ import {
   shouldAnswerPhone,
 } from "./index.js";
 
-describe("sumDouble", function () {
+describe.only("sumDouble", function () {
   it("adds two different positive numbers", function () {
     expect(sumDouble(1, 2)).toBe(3);
   });
-  it("adds two diferent negative numbers", function () {
+
+  it("adds two different negative numbers", function () {
     expect(sumDouble(-4, -6)).toBe(-10);
   });
+
   it("adds a positive and a negative number", function () {
     expect(sumDouble(10, -3)).toBe(7);
   });
-  it("doubles the sum when the numbers are equal and positve", function () {
+
+  it("doubles the sum when numbers are equal and positive", function () {
     expect(sumDouble(2, 2)).toBe(8);
   });
+
   it("doubles the sum when numbers are equal and negative", function () {
     expect(sumDouble(-3, -3)).toBe(-12);
   });
-  it("handles zeros correclty", function () {
+
+  it("handles zeros correctly", function () {
     expect(sumDouble(0, 5)).toBe(5);
   });
-
-  // it("",function(){
-  //     expect().toBe();
-  //   });
 });
+
 describe("makes10", function () {
   it("is true when first number is 10", function () {
     expect(makes10(10, 0)).toBe(true);
   });
+
   it("is true when second number is 10", function () {
     expect(makes10(3, 10)).toBe(true);
   });
-  it("is true when the sum is 10", function () {
+
+  it("is true when sum is 10", function () {
     expect(makes10(7, 3)).toBe(true);
     expect(makes10(1, 9)).toBe(true);
   });
+
   it("is false when neither is 10 and sum is not 10", function () {
     expect(makes10(4, 4)).toBe(false);
     expect(makes10(0, 0)).toBe(false);
   });
+
   it("handles negative numbers in sum", function () {
     expect(makes10(-5, 15)).toBe(true);
     expect(makes10(-3, 12)).toBe(false);
   });
 });
+
 describe("near100", function () {
-  it("is true well inside the distance", function () {
+  it("is true well inside distance", function () {
     expect(near100(95, 10)).toBe(true);
     expect(near100(105, 10)).toBe(true);
   });
-  it("is true exactly at lower boundry", function () {
+
+  it("is true exactly at lower boundary", function () {
     expect(near100(95, 5)).toBe(true);
   });
-  it("is true exactly at upper border", function () {
+
+  it("is true exactly at upper boundary", function () {
     expect(near100(110, 10)).toBe(true);
   });
-  it("is false just outside lower boundry", function () {
+
+  it("is false just outside lower boundary", function () {
     expect(near100(94, 5)).toBe(false);
   });
+
   it("is false just outside upper boundary", function () {
     expect(near100(111, 10)).toBe(false);
   });
+
   it("is false when far from 100", function () {
     expect(near100(50, 10)).toBe(false);
     expect(near100(200, 20)).toBe(false);
   });
 });
+
 describe("isMultiple35", function () {
   it("is true for a multiple of 3 only", function () {
     expect(isMultiple35(3)).toBe(true);
     expect(isMultiple35(9)).toBe(true);
   });
+
   it("is true for a multiple of 5 only", function () {
     expect(isMultiple35(5)).toBe(true);
     expect(isMultiple35(20)).toBe(true);
   });
+
   it("is true for a multiple of both 3 and 5", function () {
     expect(isMultiple35(15)).toBe(true);
     expect(isMultiple35(30)).toBe(true);
@@ -108,17 +123,25 @@ describe("isMultiple35", function () {
     expect(isMultiple35(-7)).toBe(false);
   });
 });
+
 describe("shareLastDigit", function () {
   it("is true when both are one-digit and equal", function () {
     expect(shareLastDigit(7, 7)).toBe(true);
   });
+
   it("is true for multi-digit numbers sharing last digit", function () {
     expect(shareLastDigit(27, 7)).toBe(true);
     expect(shareLastDigit(123, 43)).toBe(true);
   });
+
   it("is false when last digits are different", function () {
     expect(shareLastDigit(10, 21)).toBe(false);
     expect(shareLastDigit(9, 20)).toBe(false);
+  });
+
+  it("works with zero as last digit", function () {
+    expect(shareLastDigit(10, 20)).toBe(true);
+    expect(shareLastDigit(30, 4)).toBe(false);
   });
 });
 
@@ -150,10 +173,8 @@ describe("isColdAndHot", function () {
     expect(isColdAndHot(0, 101)).toBe(false);
     expect(isColdAndHot(-1, 100)).toBe(false);
   });
-  it("", function () {
-    expect().toBe();
-  });
 });
+
 describe("makeABBA", function () {
   it("builds ABBA from two normal words", function () {
     expect(makeABBA("Hi", "Bye")).toBe("HiByeByeHi");
@@ -181,6 +202,7 @@ describe("makeABBA", function () {
     expect(makeABBA("!", "?")).toBe("!??!");
   });
 });
+
 describe("makeSLS", function () {
   it("puts shorter first string outside when first is shorter", function () {
     expect(makeSLS("Hi", "Hello")).toBe("HiHelloHi");
@@ -238,7 +260,7 @@ describe("canEnterClub", function () {
   });
 });
 
-describe.only("shouldAnswerPhone", function () {
+describe("shouldAnswerPhone", function () {
   it("answers when not morning and not asleep, any caller", function () {
     expect(shouldAnswerPhone(false, false, false)).toBe(true);
     expect(shouldAnswerPhone(false, true, false)).toBe(true);
